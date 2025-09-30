@@ -24,7 +24,8 @@ pip install azure-ai-agents==1.2.0b4 mcp
 
 [Connect to remote agents with A2A protocol](https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/06-multi-remote-agents-with-a2a.html)
 
-> Must install additional python packages
+> Must install additional python packages  
+> Make sure your current location is `/Labfiles/06-build-remote-agents-with-a2a/python` before install the packages for this lab
 
 ```bash
 pip install -r requirements.txt
