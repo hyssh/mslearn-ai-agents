@@ -86,31 +86,67 @@ Once installed, you’ll see a new status bar item at the far left indicating th
 
 Clicking this item opens Dev Containers commands.
 
-#### Try a predefined dev container in the repo
-Open the Command Palette (`F1`) → run `Dev Containers: Try a Dev Container Sample...` → select the **Node.js** sample.
-
-> You can also try other samples like `vscode-remote-try-python` or `vscode-remote-try-java`.
-
-#### Build the Container
-VS Code will reload and begin building the container. It will clone the sample repo into an isolated container volume.
-
-> This may take time the first time, but will be faster on subsequent launches.
-
-Once built, VS Code connects to the container and maps your project folder into it.
-
-#### Confirm the Container
-You’ll see the remote context change in the bottom left of the status bar once connected.
-
-
-
 ## If you are not using DevContainer 3. Install Python Packages
 
-Inside the Dev Container terminal, run:
+Install python  
+- Python 3.12 or later.
+
+Install Azure CLI  
+- https://learn.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+
+Open a terminal, run:
+
+Make sure you are in the project folder `mslearn-ai-agents`  
+
+
+### ✅ 1. Check Python Installation
+
+```bash
+python3.12 --version
+```
+
+If not installed, download it from https://www.python.org/downloads/ or use your system’s package manager.
+
+---
+
+### ✅ 2. Create Virtual Environment
+
+Navigate to your project folder (`mslearn-ai-agents`) and run:
+
+```bash
+python3.12 -m venv .venv
+```
+
+---
+
+### ✅ 3. Activate Virtual Environment
+
+#### On macOS/Linux:
+```bash
+source .venv/bin/activate
+```
+
+#### On Windows (Command Prompt):
+```cmd
+.venv\Scripts\activate.bat
+```
+
+#### On Windows (PowerShell):
+
+.venv\Scripts\Activate.ps1
+```
+
+You’ll know it’s active when your terminal prompt shows `(.venv)`.
+
+---
+
+### ✅ 4. Install Required Python Packages
 
 ```bash
 pip install azure-ai-projects
 pip install azure-identity
 ```
+
 
 
 ## 4. Authenticate with Azure
@@ -126,10 +162,9 @@ az login
 
 To run the agent setup code, you’ll need:
 
-- **Project Endpoint**: Found in the Azure AI Foundry portal under  
+- **Project Endpoint**: Found in the [Azure AI Foundry](https://ai.azure.com) portal under  
   `Azure AI Foundry (https://ai.azure.com) > Overview`.
 
-  ⚠️ *Starting May 2025*, Azure AI Agent Service uses **project endpoints** instead of connection strings. Hub-based projects are no longer compatible with the current SDK and REST API.
 
 - **Model Deployment Name**: Found in  
   `Models + Endpoints` in the left navigation menu of the Azure AI Foundry portal.

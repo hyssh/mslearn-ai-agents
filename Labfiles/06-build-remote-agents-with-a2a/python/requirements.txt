@@ -1,3 +1,4 @@
+openai
 python-dotenv
 httpx
 azure-identity
@@ -6,4 +7,14 @@ starlette
 sse-starlette
 fastapi
 a2a-sdk
-a2a-sdk[http-server]
+#################################################
+# a2a-sdk[http-server]
+# python-dotenv
+# httpx
+# azure-identity
+# uvicorn
+# starlette
+# fastapi
+# requests
+# azure-ai-agents
+# a2a

@@ -7,7 +7,7 @@ wheels/
 *.egg-info
 .pytest_cache
 # Virtual environments
-.venv
+.venv/
 **.docx
 outputs*
 data
@@ -18,3 +18,4 @@ sec-edgar-filings
 *.csv
 *.json
 *.pem
+labenv

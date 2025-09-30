@@ -22,9 +22,13 @@ To run the exercises in a Dev Container, follow these steps:
 4. Open a terminal in the container.
 5. Start the virtual environment by running the following command:
    ```
-   source .venv/bin/activate
+   source /workspaces/mslearn-ai-agents/.venv/bin/activate
    ```
-   
+
+# Labs
+
+Instruction can be found here [Labs](Labs.md) content links 
+
 ## Reporting issues
 
 If you encounter any problems in the exercises, please report them as **issues** in this repo.
