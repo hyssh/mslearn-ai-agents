@@ -29,7 +29,7 @@ with project_client:
     message = project_client.agents.messages.create(
         thread_id=thread.id,
         role="user",
-        content="Hi, Agent! Draw a graph for a line with a slope of 4 and y-intercept of 9.",
+        content="Draw a graph for a line with a slope of 4 and y-intercept of 9, and save it as PNG image format in '/mnt/data/demo.png', and return it to me",
     )
     print(f"Created message, ID: {message['id']}")
 
@@ -41,7 +41,7 @@ with project_client:
     print(f"Run finished with status: {run.status}")
 
     if run.status == "failed":
-        print(f"Run failed: {run.last_error}")
+        print(f"Error:: Code Interpreter failed: {run.last_error}")
         print("Let me try again with a different question...")
         message_2 = project_client.agents.messages.create(
             thread_id=thread.id,
@@ -64,11 +64,12 @@ with project_client:
                 project_client.agents.files.save(
                     file_id=file_id, file_name=file_name)
                 print(f"Saved image file to: {Path.cwd() / file_name}")
-
+        project_client.agents.threads.delete(thread.id)
+        print("Deleted thread")
         project_client.agents.delete_agent(agent.id)
         print("Deleted agent")
         print("You dont have code_interpreter but it will work for our lab ")
-        print("✅ TEST successfully done!")
+        print("TEST is done, Code Interpreter tool is not available in your account.")
         # exit early
         exit(0)
 
@@ -81,7 +82,7 @@ with project_client:
             project_client.agents.files.save(
                 file_id=file_id, file_name=file_name)
             print(f"Saved image file to: {Path.cwd() / file_name}")
-
+    project_client.agents.threads.delete(thread.id)
     project_client.agents.delete_agent(agent.id)
     print("Deleted agent")
 
