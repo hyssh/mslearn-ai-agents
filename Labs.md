@@ -4,7 +4,7 @@
 
 ## Lab 1
 
-[Agent Fundamentals](/Instructions/01-agent-fundamentals.md)
+[Agent Fundamentals](/Instructions/01-agent-fundamentals.md#create-your-agent)
 
 
 ## Lab 3
